@@ -157,10 +157,6 @@ public class DamaIDE extends JFrame implements ActionListener{
         //Agregar componentes para el panel area de texto
         panAreaTexto.add(scpEditorCodigo, BorderLayout.CENTER);
 
-/******************** Creacion del panel separador derecho, que estara en la parte derecha ********************/
-        panSeparadorEste = new JPanel();
-        panSeparadorEste.setSize(50,300);
-
 /******************** Creacion del panel que tendra la tabla de lexema, estara en la parte de abajo (sur) ********************/
         panTablaLexemas = new JPanel();
         panTablaLexemas.setLayout(new BorderLayout());
@@ -184,7 +180,7 @@ public class DamaIDE extends JFrame implements ActionListener{
         panBackground.add(panSeparadorNorte, BorderLayout.NORTH);
         panBackground.add(panBotonesEjeY, BorderLayout.WEST);
         panBackground.add(panAreaTexto, BorderLayout.CENTER);
-        //panBackground.add(panSeparadorEste, BorderLayout.EAST);
+
         panBackground.add(panTablaLexemas, BorderLayout.SOUTH);
         
         //Agregar componentes al frame principal
