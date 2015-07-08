@@ -9,6 +9,7 @@ import com.alee.laf.WebLookAndFeel;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.BorderLayout;
+import java.awt.HeadlessException;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.io.BufferedReader;
@@ -197,43 +198,48 @@ public class DamaIDE extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent evt) {
         //Acciones de los Menus
         if (evt.getSource() == mniNuevo) {//MenuItem Nuevo Archivo
-            txaEditorCodigo.setText("");
-            tblLexema.setModel(dtmTablaLexema);
+            if (!txaEditorCodigo.getText().isEmpty()) {
+                txaEditorCodigo.setText("");
+                tblLexema.setModel(dtmTablaLexema);
+            } else {
+                JOptionPane.showMessageDialog(this, "Editor de Código Vacio\n Ya es archivo nuevo");
+            }
+
         }
         if (evt.getSource() == mniAbrir) {//MenuItem Abrir Archivo existente
-                    String Text = "";
-        try {
-            JFileChooser fc = new JFileChooser();
-            fc.showOpenDialog(this);
-            File Abrir = fc.getSelectedFile();
-            if (Abrir != null) {
-                txaEditorCodigo.setText("");
-                FileReader Fichero = new FileReader(Abrir);
-                BufferedReader leer = new BufferedReader(Fichero);
-                while ((Text = leer.readLine()) != null) {
-                    txaEditorCodigo.append(Text + "\n");
+            String texto = "";
+            try {
+                JFileChooser fc = new JFileChooser();
+                fc.showOpenDialog(this);
+                File abrir = fc.getSelectedFile();
+                if (abrir != null) {
+                    txaEditorCodigo.setText("");
+                    FileReader fichero = new FileReader(abrir);
+                    BufferedReader leer = new BufferedReader(fichero);
+                    while ((texto = leer.readLine()) != null) {
+                        txaEditorCodigo.append(texto + "\n");
+                    }
+                    leer.close();
                 }
-                leer.close();
+            } catch (IOException e) {
+                JOptionPane.showMessageDialog(this, e);
             }
-        } catch (IOException ioe) {
-            System.out.println(ioe);
-        }
         }
         if (evt.getSource() == mniGuardar) {//MenuItem Guardar Archivo escrito
             String texto = txaEditorCodigo.getText();
             try {
-                JFileChooser NUEVO = new JFileChooser();
-                NUEVO.showSaveDialog(this);
-                File Guardar = NUEVO.getSelectedFile();
-                if (Guardar != null) {
-                    texto = NUEVO.getSelectedFile().getName();
-                    FileWriter escribir = new FileWriter(Guardar + ".txt", true);
+                JFileChooser nuevo = new JFileChooser();
+                nuevo.showSaveDialog(this);
+                File guardar = nuevo.getSelectedFile();
+                if (guardar != null) {
+                    texto = nuevo.getSelectedFile().getName();
+                    FileWriter escribir = new FileWriter(guardar + ".txt", true);
                     escribir.write(txaEditorCodigo.getText());
                     escribir.close();
                 }
 
-            } catch (Exception ee) {
-                System.out.println("Error al escribir");
+            } catch (IOException e) {
+                JOptionPane.showMessageDialog(this, e);
             }
         }
         if (evt.getSource() == mniSalir) {//MenuItem Salir, cerrar la aplicación
