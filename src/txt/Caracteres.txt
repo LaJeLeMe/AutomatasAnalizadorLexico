@@ -1,0 +1,20 @@
+26Caracteres Especiales  --
+25Caracteres Especiales  ++
+7 Operadores Aritmeticos +
+7 Operadores Aritmeticos -
+7 Operadores Aritmeticos /
+7 Operadores Aritmeticos *
+7 Operadores Aritmeticos %
+8 Operador   Relacional  ==
+8 Operador   Relacional  >=
+8 Operador   Relacional  <=
+8 Operador   Relacional  <
+8 Operador   Relacional  >
+8 Operador   Relacional  !=
+9 Asignacion             =
+1 Caracter   Especial    {
+2 Caracter   Especial    }
+3 Caracter   Especial    (
+4 Caracter   Especial    )
+5 Caracter   Especial    :
+6 Caracter   Especial    ;

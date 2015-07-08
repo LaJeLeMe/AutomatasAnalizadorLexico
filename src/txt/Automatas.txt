@@ -1,0 +1,5 @@
+50Variable
+51Numero
+52Doble
+53Cadena
+54Comentario

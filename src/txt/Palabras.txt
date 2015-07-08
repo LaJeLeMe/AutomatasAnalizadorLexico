@@ -1,0 +1,15 @@
+10flot
+11ent
+12cad
+13leer
+14escribir
+15principal
+16clase
+17vacio
+18si
+19mientras
+20hacerM
+21sino
+22para
+23retornar
+24met
