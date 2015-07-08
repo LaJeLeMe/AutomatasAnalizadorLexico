@@ -171,17 +171,7 @@ public class DamaIDE extends JFrame implements ActionListener{
         tableContent = new Object[][]{};
         dtmTablaLexema = new DefaultTableModel(tableContent, columnName);
         tblLexema = new JTable(dtmTablaLexema);
-        
-        /*TableColumn col1 = tblLexema.getColumn("Lexema");
-        col1.setMinWidth(266);
-        col1.setResizable(false);
-        TableColumn col2 = tblLexema.getColumn("Nombre");
-        col2.setMinWidth(266);
-        col2.setResizable(false);
-        TableColumn col3 = tblLexema.getColumn("Token");
-        col3.setMinWidth(266);
-        col3.setResizable(false);*/
-        
+                
         scpTablaLexema = new JScrollPane(tblLexema);
         scpTablaLexema.setPreferredSize(panTablaLexemas.getSize());
         scpTablaLexema.setBackground(new Color(220,220,222));
