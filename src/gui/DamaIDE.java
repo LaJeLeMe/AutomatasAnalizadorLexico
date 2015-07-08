@@ -9,7 +9,6 @@ import com.alee.laf.WebLookAndFeel;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.BorderLayout;
-import java.awt.HeadlessException;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.io.BufferedReader;
@@ -204,7 +203,6 @@ public class DamaIDE extends JFrame implements ActionListener{
             } else {
                 JOptionPane.showMessageDialog(this, "Editor de Código Vacio\n Ya es archivo nuevo");
             }
-
         }
         if (evt.getSource() == mniAbrir) {//MenuItem Abrir Archivo existente
             String texto = "";
@@ -285,12 +283,13 @@ public class DamaIDE extends JFrame implements ActionListener{
     private void SepararCodigo(String codigo) {
         codigo = codigo + "\n";
         String[][] aux = ExArchivo.ExtraerCarctaeresDeArchivo();
-        boolean arroba = false, comilla = false;
+        boolean arroba = false;
+        boolean comilla = false;
         String lexema = "";
         int linea = 1;
         for (int i = 0; i < codigo.length(); i++) {
             for (int j = 0; j < aux.length; j++) {
-                if (codigo.charAt(i) == '\"') {
+                if (codigo.charAt(i) == '"') {
                     lexema = lexema + codigo.charAt(i);
                     comilla = !comilla;
                     break;
@@ -298,7 +297,7 @@ public class DamaIDE extends JFrame implements ActionListener{
                     lexema = lexema + codigo.charAt(i);
                     break;
                 }
-                if (codigo.charAt(i) == '#') {
+                if (codigo.charAt(i) == '"') {
                     lexema = lexema + codigo.charAt(i);
                     arroba = !arroba;
                     break;
