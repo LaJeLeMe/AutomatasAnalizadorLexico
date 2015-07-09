@@ -33,23 +33,23 @@ public class ExAutomata {
         }
         //si todo esta vien mandara el numero de token
         switch (tabla[tabla.length - 1][estado]) {
-            case '7':
+            case '3':
                 lex.setNombre("Comentario");
                 lex.setToken("54");
                 break;
-            case '2':
+            case '4':
                 lex.setNombre("Variable");
                 lex.setToken("50");
                 break;
-            case '3':
+            case '5':
                 lex.setNombre("Numero");
                 lex.setToken("51");
                 break;
-            case '9':
+            case '8':
                 lex.setNombre("Cadena");
                 lex.setToken("53");
                 break;
-            case '5':
+            case '9':
                 lex.setNombre("Doble");
                 lex.setToken("52");
                 break;
@@ -60,15 +60,15 @@ public class ExAutomata {
     private static void TokensError(int estado, LexemaVO lex) {
         switch (estado) {
             
-            case 3:
+            case 4:
                 lex.setNombre("Variable no valida");
                 lex.setToken("Error 100: Variable no valida");
                 break;
-            case 6:
+            case 2:
                 lex.setNombre("Comentario no valido");
                 lex.setToken("Error 101: Comentario no valido");
                 break;
-            case 4:
+            case 5:
                 lex.setNombre("Numero no valido");
                 lex.setToken("Error 102: Numero no valido");
                 break;

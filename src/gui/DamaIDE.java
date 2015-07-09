@@ -289,7 +289,7 @@ public class DamaIDE extends JFrame implements ActionListener{
         int linea = 1;
         for (int i = 0; i < codigo.length(); i++) {
             for (int j = 0; j < aux.length; j++) {
-                if (codigo.charAt(i) == '"') {
+                if (codigo.charAt(i) == '\"') {
                     lexema = lexema + codigo.charAt(i);
                     comilla = !comilla;
                     break;
@@ -297,7 +297,7 @@ public class DamaIDE extends JFrame implements ActionListener{
                     lexema = lexema + codigo.charAt(i);
                     break;
                 }
-                if (codigo.charAt(i) == '"') {
+                if (codigo.charAt(i) == '#') {
                     lexema = lexema + codigo.charAt(i);
                     arroba = !arroba;
                     break;
@@ -385,5 +385,18 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxx6666666666xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxf6
 xxxxxxxxxxxxxxxxxxxxxxxxxxx6666666666xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxv9
 x777777777777777777777777777777777777777777777777777777777777777777777778f7
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxv8
+
+v2
+
+#abcdefghijklmnopqrstuvwxyz0123456789~!@\¿$%^&*()_+¬·|¤€<>?:';{}[] =*-,."PN
+6222222222222222222222222223333333333xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx8f1
+x22222222222222222222222222xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxv2
+xxxxxxxxxxxxxxxxxxxxxxxxxxx3333333333xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx4xv3
+xxxxxxxxxxxxxxxxxxxxxxxxxxx5555555555xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxf4
+xxxxxxxxxxxxxxxxxxxxxxxxxxx5555555555xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxv5
+7666666666666666666666666666666666666666666666666666666666666666666666666f6
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxv7
+x888888888888888888888888888888888888888888888888888888888888888888888889f8
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxv9
 
 */
