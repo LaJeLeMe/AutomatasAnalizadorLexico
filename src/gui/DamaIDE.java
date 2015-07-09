@@ -286,7 +286,6 @@ public class DamaIDE extends JFrame implements ActionListener{
         boolean arroba = false;
         boolean comilla = false;
         String lexema = "";
-        int linea = 1;
         for (int i = 0; i < codigo.length(); i++) {
             for (int j = 0; j < aux.length; j++) {
                 if (codigo.charAt(i) == '\"') {
